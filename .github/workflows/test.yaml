@@ -45,8 +45,7 @@ jobs:
             --auth $NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
             --dir=base \
-            --alias=$DEPLOY_ALIAS \
-            --prod-if-unaliased
+            --alias=$DEPLOY_ALIAS
 
       # - name: Set GitHub Deployment Status
       #   uses: actions/deployment-status@v2.0.0
