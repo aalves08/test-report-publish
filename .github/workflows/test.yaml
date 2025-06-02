@@ -32,7 +32,7 @@ jobs:
 
       - name: Unzip report
         run: |
-          unzip base/*.zip -d cypress/accessibility/html
+          unzip *.zip -d cypress/accessibility/html
 
       - name: Deploy a11y report to Netlify
         env:
