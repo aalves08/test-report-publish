@@ -64,7 +64,7 @@ jobs:
             const envName = `a11y-pr-${prNumber}`;
             const envUrl = `https://chipper-paletas-75dfc9.netlify.app/pr-${prNumber}`;
 
-            const deployment = await github.repos.createDeployment({
+            const deployment = await github.rest.repos.createDeployment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: pr.head.sha,
@@ -74,7 +74,7 @@ jobs:
               transient_environment: true
             });
 
-            await github.repos.createDeploymentStatus({
+            await github.rest.repos.createDeploymentStatus({
               owner: context.repo.owner,
               repo: context.repo.repo,
               deployment_id: deployment.data.id,
