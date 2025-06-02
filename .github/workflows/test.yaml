@@ -28,11 +28,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: accessibility-report
-          path: /
+          path: base
 
       - name: Unzip report
         run: |
-          unzip *.zip -d cypress/accessibility/html
+          unzip base/*.zip -d cypress/accessibility/html
 
       - name: Deploy a11y report to Netlify
         env:
