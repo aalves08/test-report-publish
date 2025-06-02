@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: accessibility-report
-          path: base
+          path: base/index.html
 
       - name: Unzip report
         run: |
