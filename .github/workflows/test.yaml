@@ -24,15 +24,15 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Upload report
-        uses: actions/upload-artifact@v4
-        with:
-          name: accessibility-report
-          path: base/
+      # - name: Upload report
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: accessibility-report
+      #     path: base/
 
-      - name: Unzip report
-        run: |
-          unzip *.zip -d cypress/accessibility/html
+      # - name: Unzip report
+      #   run: |
+      #     unzip *.zip -d cypress/accessibility/html
 
       - name: Deploy a11y report to Netlify
         env:
@@ -44,7 +44,7 @@ jobs:
           npx netlify deploy \
             --auth $NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID \
-            --dir=cypress/accessibility/html \
+            --dir=base \
             --alias=$DEPLOY_ALIAS \
             --prod-if-unaliased
 
